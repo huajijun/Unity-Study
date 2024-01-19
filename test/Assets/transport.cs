@@ -33,14 +33,30 @@ public class transport : MonoBehaviour
     //     SceneManager.LoadScene(1,LoadSceneMode.Additive);
 
     // }
+
+    //异步加载
+    // 通过Transform 来维持父子关系
+    AsyncOperation operation;
+    float time = 0;
+    IEnumerator zzyloadScene() {
+       operation =  SceneManager.LoadSceneAsync(1);
+       // 加载完 后不要自动跳转
+       operation.allowSceneActivation = false;
+       yield return operation;
+    }
     void Start()
     {
-        
+        StartCoroutine(zzyloadScene());
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
+        Debug.Log(operation.progress);
+        time += Time.deltaTime;
+        if (time > 5) {
+            operation.allowSceneActivation = true;
+        }
     }
 }
