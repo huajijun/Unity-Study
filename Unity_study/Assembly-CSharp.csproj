@@ -59,9 +59,11 @@
     <Compile Include="Assets/LoadNext.cs" />
     <Compile Include="Assets/EndTriger.cs" />
     <Compile Include="Assets/Script/GameManager.cs" />
+    <Compile Include="Assets/GameStart.cs" />
     <Compile Include="Assets/Script/FollowPlayer.cs" />
     <Compile Include="Assets/Script/Player.cs" />
     <Compile Include="Assets/Script/Score.cs" />
+    <Compile Include="Assets/GameOver.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
