@@ -9,5 +9,12 @@ public class GameStart : MonoBehaviour
    public void LoadScene()
    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        ResetScore();
+   }
+
+   public void ResetScore()
+   {
+     PlayerPrefs.SetInt("Score", 0);
+     PlayerPrefs.Save(); // 确保保存更改
    }
 }
