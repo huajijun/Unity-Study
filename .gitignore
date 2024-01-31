@@ -1,6 +1,7 @@
-Unity_study/Library
-Unity_study/Logs
-Unity_study/Packages
-Unity_study/UserSettings
+Unity_study/Library/*
+Unity_study/Logs/*
+Unity_study/Packages/*
+Unity_study/UserSettings/*
 Unity_study/windows_game*
 Unity_study/ios*
+

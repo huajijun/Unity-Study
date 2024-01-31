@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public Rigidbody rb;
+    // public Rigidbody rb;
     public float forwardForce = 1000f;
     public float sidewaysForce = 500f;
     // Start is called before the first frame update
@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     //翻滚的原因是摩擦力
     void FixedUpdate()
     {
+        Rigidbody rb = GetComponent<Rigidbody>();
         // rb.AddForce(0, 0, forwardForce * Time.deltaTime);
         if (Input.GetKey("d"))
         {

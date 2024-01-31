@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class EndTriger : MonoBehaviour
 {
-    public GameManager gameManager;
+    // public GameManager gameManager;
     // Start is called before the first frame update
     void OnTriggerEnter()
     {
-        gameManager.CompleteLevel();
+        FindObjectOfType<GameManager>().CompleteLevel();
     }
 }
