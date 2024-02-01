@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
         //在每个方向上 施加多少力
         // rb.AddForce(0, 0,500);
         // FindObjectOfType<AudioManager>().PlayMusic(yourMusicClip);
+        //  FindObjectOfType<AudioManager>().Play("sad");
     }
 
     // Update is called once per frame

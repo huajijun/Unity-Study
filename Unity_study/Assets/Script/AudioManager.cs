@@ -1,54 +1,36 @@
 using UnityEngine;
+using System;
 
 public class AudioManager : MonoBehaviour
 {
+    public Sound[] sounds;
     private static AudioManager instance;
-    public AudioClip m;
-
-    // 单例模式，确保只有一个 AudioManager 实例存在
-    public static AudioManager Instance
-    {
-        get
-        {
-            if (instance == null)
-            {
-                GameObject audioManagerObject = new GameObject("AudioManager");
-                instance = audioManagerObject.AddComponent<AudioManager>();
-            }
-            return instance;
-        }
-    }
-
-    private AudioSource audioSource;
-
     private void Awake()
     {
-        // 如果 AudioManager 实例已存在，则销毁新创建的对象
-        if (instance != null && instance != this)
-        {
+        if (instance == null) {
+            instance = this;
+        }
+        else {
             Destroy(gameObject);
             return;
         }
-
-        // 将 AudioManager 实例设置为当前对象
-        instance = this;
         DontDestroyOnLoad(gameObject);
-
-        // 添加 AudioSource 组件用于播放音乐
-        audioSource = gameObject.AddComponent<AudioSource>();
-        PlayMusic(m);
-    }
-
-    // 播放音乐的方法
-    public void PlayMusic(AudioClip music)
-    {
-        if (audioSource.isPlaying)
-        {
-            audioSource.Stop();
+        foreach (var sound in sounds) {
+            sound.source = gameObject.AddComponent<AudioSource>();
+            sound.source.clip = sound.clip;
+            sound.source.volume = sound.volume;
+            sound.source.pitch = sound.pitch;
+            sound.source.loop = sound.loop;
         }
-
-        audioSource.clip = music;
-        // audioSource.loop = true; // 设置循环播放
-        audioSource.Play();
     }
+    public void Play(string name) {
+        Sound s =  Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+            return;
+        s.source.Play();
+    }
+    void Start(){
+        Play("test");
+    }
+
 }

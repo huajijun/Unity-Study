@@ -367,6 +367,7 @@
 "Assets/Script/Player.cs"
 "Assets/Script/PlayerCollision.cs"
 "Assets/Script/Score.cs"
+"Assets/Script/ScoreMnager.cs"
 -langversion:9.0
 
 /deterministic

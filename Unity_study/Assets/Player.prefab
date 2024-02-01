@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2790247579787073861}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,7 +147,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96de8c8118a15603ea404b2b6be5296e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 5564501070740678383}
   forwardForce: 100
   sidewaysForce: 100
 --- !u!114 &2790247579787073861
@@ -162,5 +161,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65df1dbeb5a6a0257a54760d012456a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 3797665926877647814}
-  gameManager: {fileID: 0}

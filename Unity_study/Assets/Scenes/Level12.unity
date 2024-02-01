@@ -276,8 +276,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 024ad275c526019288e7a4461c399b25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1761603050}
-  scoreText: {fileID: 121949656}
 --- !u!114 &121949656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,7 +350,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 214ef2fb6e68ac1a281156ecb06c6520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 1875914603}
 --- !u!65 &161468444
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1151,8 +1148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d888fb20449c10962a53b7dbc5c5c33a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1761603050}
-  offset: {x: 0, y: 1, z: -5}
+  offset: {x: 0, y: 2.75, z: -11.63}
+  smoothSpeed: 1
 --- !u!1 &987780850
 GameObject:
   m_ObjectHideFlags: 0
@@ -1460,11 +1457,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f219bec5538979c4ca98e1193c042436, type: 3}
---- !u!4 &1761603050 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4513026111306201866, guid: cc3ea3dff3474c8998c5f08b6eef1b82, type: 3}
-  m_PrefabInstance: {fileID: 1549807405}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1832695635
 GameObject:
   m_ObjectHideFlags: 0
