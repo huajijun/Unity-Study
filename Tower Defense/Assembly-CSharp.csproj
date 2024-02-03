@@ -59,6 +59,7 @@
     <Compile Include="Assets/Enemy.cs" />
     <Compile Include="Assets/WaveGenerator.cs" />
     <Compile Include="Assets/Turret.cs" />
+    <Compile Include="Assets/Bullet.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

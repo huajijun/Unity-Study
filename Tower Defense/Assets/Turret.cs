@@ -12,6 +12,13 @@ public class Turret : MonoBehaviour
     public string enemyTag = "enemy";
     public float range = 15f;
     public float turnSpeed = 10f;
+
+    public float fireRate = 1f;
+    public float fireCountdown = 0f;
+
+    public GameObject bulletPref;
+    public Transform firePoint;
+
     void Start()
     {
         InvokeRepeating("UpdataTaget",0f,0.5f);
@@ -55,7 +62,32 @@ public class Turret : MonoBehaviour
         // Vector3 rotation = lookRoration.eulerAngles;
         Vector3 rotation = Quaternion.Lerp(parentRorate.rotation, lookRoration, Time.deltaTime* turnSpeed).eulerAngles;
         parentRorate.rotation = Quaternion.Euler(0f,rotation.y,0f);
+    
+        if (fireCountdown <= 0f)
+        {
+            Shoot();
+            fireCountdown = 1f/ fireRate;
+
+        }
+        fireCountdown -= Time.deltaTime; 
+    
+    
     }
+
+    void Shoot()
+    {
+        GameObject bulletGo = (Instantiate(bulletPref, firePoint.position, firePoint.rotation));
+        Bullet bullet = bulletGo.GetComponent<Bullet>();
+        if (bullet != null)
+        {
+            bullet.Seek(target);
+        }
+
+    
+    }
+
+
+
 
     void OnDrawGizmosSelected()
     {
